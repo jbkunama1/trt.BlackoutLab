@@ -1,5 +1,9 @@
 # ⚡️ Blackout Lab – Online-Escape-Game zur Energiewende
 
+<a href="https://www.buymeacoffee.com/highfish">
+<img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174">
+</a>
+
 <div align="center">
 
 ![Blackout Lab Logo](assets/logo.png)
@@ -435,3 +439,4 @@ Contributions are very welcome! 🎉
 - 📜 **License:** MIT (see [LICENSE](LICENSE))
 - 🙌 Contributions, translations and new puzzle ideas are highly appreciated!
 - 📖 **Story background:** [Gemini Link](https://gemini.google.com/share/97996859cb2d)
+
