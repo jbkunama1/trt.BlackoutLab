@@ -24,6 +24,14 @@ Unten: kurzer Erklärungstext für die Lernenden.
 **URL zum Einbetten in den QR‑Code:**
 
 ```text
+https://<DEIN-GITHUB-USERNAME>.github.io/trt.BlackoutLab/
+```
+
+(Ersetze `<DEIN-GITHUB-USERNAME>` durch deinen GitHub-Benutzernamen.)
+
+Alternativ fÃ¼r selbst gehostete Instanzen:
+
+```text
 http://DEIN-SERVER:8080
 ```
 

@@ -1,6 +1,10 @@
 services:
   blackout-lab:
+    # Option A: Build locally (needs the repo checked out)
     build: .
+    # Option B: Use the pre-built image from GitHub Container Registry
+    # (built & pushed automatically by .github/workflows/deploy.yml)
+    # image: ghcr.io/jbkunama1/trt.blackoutlab:latest
     container_name: blackout-lab
     restart: unless-stopped
     ports:
