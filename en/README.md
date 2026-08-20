@@ -87,7 +87,7 @@ directly in the browser, no login, no backend required.
 ## 🏗 Project Structure
 
 ```text
-trtBlackoutLab/
+trt.BlackoutLab/
 ├─ 📄 index.html          # 🏠 Start page (language chooser 🇩🇪/🇬🇧)
 ├─ 📁 de/
 │  └─ 📄 index.html       # 🇩🇪 German game entry point
@@ -117,8 +117,8 @@ trtBlackoutLab/
 
 ```bash
 # Clone the repository
-git clone https://github.com/jbkunama1/trtBlackoutLab.git
-cd trtBlackoutLab
+git clone https://github.com/jbkunama1/trt.BlackoutLab.git
+cd trt.BlackoutLab
 
 # Open en/index.html in your browser – done! 🎉
 ```
