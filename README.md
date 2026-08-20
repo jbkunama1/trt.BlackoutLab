@@ -60,7 +60,7 @@ Grundlagen    ermitteln   typen        kapazität    anlage      Aufgabe
 ## 🏗 Projektstruktur
 
 ```text
-trtBlackoutLab/
+trt.BlackoutLab/
 ├─ 📄 index.html          # 🏠 Start-Seite (Sprachauswahl: 🇩🇪/🇬🇧)
 ├─ 📁 de/
 │  └─ index.html          # 🇩🇪 Einstieg ins Spiel (Deutsch)
@@ -94,8 +94,8 @@ trtBlackoutLab/
 
 ```bash
 # Repo klonen
-git clone https://github.com/jbkunama1/trtBlackoutLab.git
-cd trtBlackoutLab
+git clone https://github.com/jbkunama1/trt.BlackoutLab.git
+cd trt.BlackoutLab
 
 # index.html einfach im Browser öffnen – fertig! 🎉
 ```
@@ -315,7 +315,7 @@ in the browser, no login, no backend.
 ## 🏗 Project Structure
 
 ```text
-trtBlackoutLab/
+trt.BlackoutLab/
 ├─ 📄 index.html          # 🏠 Start page (language chooser 🇩🇪/🇬🇧)
 ├─ 📁 de/
 │  └─ index.html          # 🇩🇪 German game entry point
@@ -349,8 +349,8 @@ trtBlackoutLab/
 
 ```bash
 # Clone the repository
-git clone https://github.com/jbkunama1/trtBlackoutLab.git
-cd trtBlackoutLab
+git clone https://github.com/jbkunama1/trt.BlackoutLab.git
+cd trt.BlackoutLab
 
 # Just open index.html in your browser – done! 🎉
 ```
