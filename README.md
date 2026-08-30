@@ -1,5 +1,4 @@
 # ⚡️ Blackout Lab – Online-Escape-Game zur Energiewende
-
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/highfish)
 
 <div align="center">
@@ -61,8 +60,10 @@ Grundlagen    ermitteln   typen        kapazität    anlage      Aufgabe
 ## 🏗 Projektstruktur
 
 ```text
-trtBlackoutLab/
-├─ 📄 index.html          # 🇩🇪 Einstieg ins Spiel (Deutsch)
+trt.BlackoutLab/
+├─ 📄 index.html          # 🏠 Start-Seite (Sprachauswahl: 🇩🇪/🇬🇧)
+├─ 📁 de/
+│  └─ index.html          # 🇩🇪 Einstieg ins Spiel (Deutsch)
 ├─ 📁 en/
 │  ├─ index.html          # 🇬🇧 English version entry point
 │  └─ README.md           # English documentation
@@ -74,8 +75,14 @@ trtBlackoutLab/
 ├─ 📁 assets/
 │  ├─ logo.png            # 🖼  Logo für Kopfzeile & README
 │  └─ icons/              # 🎨 Optionale Zusatzgrafiken
+├─ 📁 doc/
+│  ├─ einstiegsszenario…  # 👨‍🏫 Lehrerskript für den Einstieg
+│  ├─ einsatzprotokoll.md # 📝 Arbeitsblatt zum Ausdrucken
+│  ├─ qr-vorlage….md      # 🔗 QR-Code-Vorlage für die Klasse
+│  └─ reflexion….md       # 🤔 Leitfragen zur Auswertung
 ├─ 🐳 Dockerfile          # Docker-Build für nginx
-├─ 🐳 docker-compose.yml  # Compose-Konfiguration
+├─ 🐳 docker-compose.yml  # Compose-Konfiguration (Portainer)
+├─ .github/workflows/     # 🚀 CI/CD (Docker-Image & GitHub Pages)
 └─ 📜 LICENSE             # MIT-Lizenz
 ```
 
@@ -87,8 +94,8 @@ trtBlackoutLab/
 
 ```bash
 # Repo klonen
-git clone https://github.com/jbkunama1/trtBlackoutLab.git
-cd trtBlackoutLab
+git clone https://github.com/jbkunama1/trt.BlackoutLab.git
+cd trt.BlackoutLab
 
 # index.html einfach im Browser öffnen – fertig! 🎉
 ```
@@ -108,7 +115,24 @@ serve .
 
 ---
 
-### 🔹 Variante 3: Docker + nginx
+### 🔹 Variante 3: GitHub Pages (automatisches Hosting)
+
+Bei jedem Push auf `main` baut das [CI/CD-Workflow](.github/workflows/deploy.yml) die Seite automatisch
+und veröffentlicht sie kostenlos auf **GitHub Pages**:
+
+```text
+https://<DEIN-GITHUB-USERNAME>.github.io/trt.BlackoutLab/
+```
+
+> ✅ **Kein Server nötig** – ideal zum direkten Einsatz im Klassenzimmer.
+> Die Startseite (`index.html`) bietet eine Sprachauswahl: 🇩🇪 Deutsch unter `/de/`, 🇬🇧 Englisch unter `/en/`.
+
+> ⚠️ **Aktivierung:** Unter *Repository → Settings → Pages* muss als Quelle
+> **"GitHub Actions"** ausgewählt sein, damit der Workflow die Seite veröffentlichen darf.
+
+---
+
+### 🔹 Variante 4: Docker + nginx (manuell)
 
 ```bash
 # Image bauen
@@ -118,11 +142,19 @@ docker build -t blackout-lab .
 docker run -d -p 8080:80 --name blackout-lab blackout-lab
 ```
 
-Oder mit `docker-compose` (empfohlen):
+### 🔹 Variante 5: Docker Compose (empfohlen)
 
 ```bash
 docker-compose up -d
 ```
+
+### 🔹 Variante 6: Deployment via Portainer Stack
+
+1.  **Im Portainer Dashboard anmelden.**
+2.  **"Stacks" > "Add stack" auswählen.**
+3.  **Einen Namen für den Stack vergeben** (z.B. `blackout-lab`).
+4.  **Den Inhalt von `docker-compose.yml` in das "Web editor"-Feld kopieren.**
+5.  **"Deploy the stack" klicken.**
 
 🐳 Das Spiel ist dann unter **`http://localhost:8080`** erreichbar.
 
@@ -283,8 +315,10 @@ in the browser, no login, no backend.
 ## 🏗 Project Structure
 
 ```text
-trtBlackoutLab/
-├─ 📄 index.html          # 🇩🇪 German game entry point
+trt.BlackoutLab/
+├─ 📄 index.html          # 🏠 Start page (language chooser 🇩🇪/🇬🇧)
+├─ 📁 de/
+│  └─ index.html          # 🇩🇪 German game entry point
 ├─ 📁 en/
 │  ├─ index.html          # 🇬🇧 English game entry point
 │  └─ README.md           # English documentation
@@ -296,8 +330,14 @@ trtBlackoutLab/
 ├─ 📁 assets/
 │  ├─ logo.png            # 🖼  Header / README logo
 │  └─ icons/              # 🎨 Optional icons & artwork
+├─ 📁 doc/
+│  ├─ einstiegsszenario…  # 👨‍🏫 Teacher script
+│  ├─ einsatzprotokoll.md # 📝 Printable worksheet
+│  ├─ qr-vorlage….md      # 🔗 QR-code template
+│  └─ reflexion….md       # 🤔 Debrief questions
 ├─ 🐳 Dockerfile          # Docker build for nginx
-├─ 🐳 docker-compose.yml  # Compose configuration
+├─ 🐳 docker-compose.yml  # Compose configuration (Portainer)
+├─ .github/workflows/     # 🚀 CI/CD (Docker image & GitHub Pages)
 └─ 📜 LICENSE             # MIT License
 ```
 
@@ -309,8 +349,8 @@ trtBlackoutLab/
 
 ```bash
 # Clone the repository
-git clone https://github.com/jbkunama1/trtBlackoutLab.git
-cd trtBlackoutLab
+git clone https://github.com/jbkunama1/trt.BlackoutLab.git
+cd trt.BlackoutLab
 
 # Just open index.html in your browser – done! 🎉
 ```
@@ -330,7 +370,24 @@ serve .
 
 ---
 
-### 🔹 Option 3: Docker + nginx
+### 🔹 Option 3: GitHub Pages (automatic hosting)
+
+Every push to `main` triggers the [CI/CD workflow](.github/workflows/deploy.yml), which builds and
+publishes the site for free on **GitHub Pages**:
+
+```text
+https://<YOUR-GITHUB-USERNAME>.github.io/trt.BlackoutLab/
+```
+
+> ✅ **No server required** – perfect for classroom use.
+> The start page (`index.html`) offers a language choice: 🇩🇪 German at `/de/`, 🇬🇧 English at `/en/`.
+
+> ⚠️ **Activation:** In *Repository → Settings → Pages*, the source must be set to
+> **"GitHub Actions"** so the workflow is allowed to publish the page.
+
+---
+
+### 🔹 Option 4: Docker + nginx (manual)
 
 ```bash
 # Build the image
@@ -340,11 +397,19 @@ docker build -t blackout-lab .
 docker run -d -p 8080:80 --name blackout-lab blackout-lab
 ```
 
-Or using `docker-compose` (recommended):
+### 🔹 Option 5: Docker Compose (recommended)
 
 ```bash
 docker-compose up -d
 ```
+
+### 🔹 Option 6: Deployment via Portainer Stack
+
+1.  **Log in to the Portainer dashboard.**
+2.  **Select "Stacks" > "Add stack".**
+3.  **Give the stack a name** (e.g. `blackout-lab`).
+4.  **Paste the contents of `docker-compose.yml` into the "Web editor" field.**
+5.  **Click "Deploy the stack".**
 
 🐳 The game will be available at **`http://localhost:8080`** by default.
 
@@ -437,4 +502,3 @@ Contributions are very welcome! 🎉
 - 📜 **License:** MIT (see [LICENSE](LICENSE))
 - 🙌 Contributions, translations and new puzzle ideas are highly appreciated!
 - 📖 **Story background:** [Gemini Link](https://gemini.google.com/share/97996859cb2d)
-

@@ -87,8 +87,10 @@ directly in the browser, no login, no backend required.
 ## 🏗 Project Structure
 
 ```text
-trtBlackoutLab/
-├─ 📄 index.html          # 🇩🇪 German game entry point
+trt.BlackoutLab/
+├─ 📄 index.html          # 🏠 Start page (language chooser 🇩🇪/🇬🇧)
+├─ 📁 de/
+│  └─ 📄 index.html       # 🇩🇪 German game entry point
 ├─ 📁 en/
 │  ├─ 📄 index.html       # 🇬🇧 English game entry point  ← you are here
 │  └─ 📄 README.md        # This file
@@ -100,8 +102,10 @@ trtBlackoutLab/
 ├─ 📁 assets/
 │  ├─ logo.png            # 🖼  Header / README logo
 │  └─ icons/              # 🎨 Optional icons & artwork
+├─ 📁 doc/                # 👨‍🏫 Teacher materials (intro, worksheet, QR, debrief)
 ├─ 🐳 Dockerfile          # Docker build for nginx
-├─ 🐳 docker-compose.yml  # Compose configuration
+├─ 🐳 docker-compose.yml  # Compose configuration (Portainer)
+├─ .github/workflows/     # 🚀 CI/CD (Docker image & GitHub Pages)
 └─ 📜 LICENSE             # MIT License
 ```
 
@@ -113,8 +117,8 @@ trtBlackoutLab/
 
 ```bash
 # Clone the repository
-git clone https://github.com/jbkunama1/trtBlackoutLab.git
-cd trtBlackoutLab
+git clone https://github.com/jbkunama1/trt.BlackoutLab.git
+cd trt.BlackoutLab
 
 # Open en/index.html in your browser – done! 🎉
 ```
@@ -145,6 +149,29 @@ docker-compose up -d
 ```
 
 🐳 The game will be available at **`http://localhost:8080`** by default.
+
+### 🔹 Deployment via Portainer Stack
+
+1. **Log in to the Portainer dashboard.**
+2. **Select "Stacks" > "Add stack".**
+3. **Give the stack a name** (e.g. `blackout-lab`).
+4. **Paste the contents of `docker-compose.yml` into the "Web editor" field.**
+5. **Click "Deploy the stack".**
+
+### 🔹 GitHub Pages (automatic hosting)
+
+Every push to `main` triggers the [CI/CD workflow](../.github/workflows/deploy.yml), which builds and
+publishes the site for free on **GitHub Pages**:
+
+```text
+https://<YOUR-GITHUB-USERNAME>.github.io/trt.BlackoutLab/
+```
+
+> ✅ **No server required** – perfect for classroom use.
+> The start page (`index.html`) offers a language choice: 🇩🇪 German at `/de/`, 🇬🇧 English at `/en/`.
+
+> ⚠️ **Activation:** In *Repository → Settings → Pages*, the source must be set to
+> **"GitHub Actions"** so the workflow is allowed to publish the page.
 
 ---
 
